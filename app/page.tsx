@@ -29,9 +29,6 @@ export default function Home() {
       <Header />
 
       <section className="relative overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.55),transparent_42%)]" />
-
-        {/* WEB */}
         <div className="relative hidden w-full overflow-hidden rounded-b-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:block">
           <img
             src="/imagens/capa1.png"
@@ -51,7 +48,6 @@ export default function Home() {
           </a>
         </div>
 
-        {/* CELULAR */}
         <div className="relative block overflow-hidden rounded-b-[32px] bg-[#f7f0e6] px-5 pb-10 pt-8 shadow-[0_18px_45px_rgba(0,0,0,0.16)] md:hidden">
           <div className="mx-auto flex max-w-[360px] flex-col items-center text-center">
             <p className="text-xs font-black uppercase tracking-[0.35em] text-[#3f9254]">
@@ -75,8 +71,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-[15px] leading-7 text-[#26362f]">
-              Uma obra sensível, humana e acolhedora para quem vive ou convive
-              com essa nova realidade.
+              Um texto surpreendente e humano sobre a rotina de quem vive nessa condição.
             </p>
 
             <a
@@ -105,16 +100,18 @@ export default function Home() {
             <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#102b22] to-[#3f9254] md:mx-0" />
 
             <p className="mt-6 text-[15px] leading-7 text-[#26362f]">
-              O objetivo do livro não é concentrar na compreensão, mas sim
-              humanizar a informação. Aqui, o imaginário popular limita o
-              Parkinson ao tremor das mãos — e estreitar o abismo que existe
-              entre o “ouvi falar” com o “é assim” que acontece no cotidiano.
+              Um texto surpreendente e humano sobre a rotina de quem vive nessa condição.
+              Longe de ser um manual médico ou um relato focado em sintomas, esta obra
+              pulsa através de histórias curiosas, leves e inesperadas do dia a dia.
+              O autor compartilha bastidores reais que a maioria das pessoas nem imagina
+              que acontecem, transformando a jornada em narrativa viva.
             </p>
 
             <p className="mt-5 text-[15px] leading-7 text-[#26362f]">
-              Lançada pela Arte Impressa Editora, a obra é acolhedora e direta
-              para quem vive e convive com o Parkinson e também para todos
-              aqueles que vivem ou viverão essa realidade.
+              É um convite para enxergar a vida além do diagnóstico, celebrando a
+              sensibilidade, humor e muita autenticidade. Uma leitura essencial para
+              descobrir que, mesmo com desafios, a vida transborda momentos
+              extraordinários e profundamente inspiradores.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-5 text-center sm:grid-cols-3 md:grid-cols-3">
@@ -210,7 +207,7 @@ export default function Home() {
         <img
           src="/imagens/auto.jpeg"
           alt="Carlos Henrique"
-          className="mx-auto h-40 w-40 rounded-full border-[8px] border-white object-cover shadow-[0_25px_45px_rgba(0,0,0,.28)] md:h-44 md:w-44"
+          className="mx-auto h-40 w-40 rounded-full border-[8px] border-white object-cover object-top shadow-[0_25px_45px_rgba(0,0,0,.28)] md:h-44 md:w-44"
         />
 
         <div>
@@ -221,9 +218,14 @@ export default function Home() {
             Carlos Henrique Bitar Barbosa
           </h2>
           <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#26362f]">
-            Escritor, pai e paciente de Parkinson há mais de 15 anos.
-            Transformou sua jornada em palavras para ajudar outras pessoas a
-            compreenderem essa nova realidade.
+            Carlos Henrique Bitar Barbosa, um observador atento da vida que, aos
+            44 anos, 4 meses e 22 dias de idade, recebeu o diagnóstico de
+            Parkinson, confirmando o que os sintomas já anunciavam há tempos.
+          </p>
+          <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#26362f]">
+            Longe de aceitar o diagnóstico como um ponto final, transformou os
+            últimos 15 anos de convivência diária – 24 horas por dia – em um
+            laboratório de superações, redescobertas e criatividade.
           </p>
         </div>
 
@@ -299,7 +301,7 @@ export default function Home() {
 
         <div className="mx-auto mt-8 flex max-w-[1420px] flex-col items-center justify-between gap-2 border-t border-[#102b22]/15 pt-5 text-center text-sm text-[#26362f] md:flex-row md:text-left">
           <p>© 2024 Carlos Henrique Bitar Barbosa · Todos os direitos reservados.</p>
-          <p>Arte Impressa Editora</p>
+          <p className="font-bold">Arte Impressa Editora</p>
         </div>
       </footer>
 

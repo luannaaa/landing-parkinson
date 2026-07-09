@@ -21,15 +21,6 @@ export default function Header() {
             alt="Arte Impressa Editora"
             className="h-[50px] w-auto object-contain md:h-[62px]"
           />
-
-          <div className="leading-[1]">
-            <p className="text-[12px] font-black tracking-[0.18em] text-white md:text-[15px] md:tracking-[0.22em]">
-              ARTE IMPRESSA
-            </p>
-            <p className="mt-1 text-[10px] font-bold tracking-[0.28em] text-white md:text-[13px] md:tracking-[0.35em]">
-              EDITORA
-            </p>
-          </div>
         </Link>
 
         <nav className="hidden items-center gap-10 text-sm font-semibold md:flex">
