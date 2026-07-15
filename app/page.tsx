@@ -78,7 +78,7 @@ export default function Home() {
       <section className="relative overflow-hidden pt-20">
         <div className="relative hidden w-full overflow-hidden rounded-b-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:block">
           <img src="/imagens/capa1.png" alt="13.892 Palavras para Entender o Parkinson no Cotidiano" className="w-full select-none" draggable={false} />
-          <a href="#comprar" target="_blank" rel="noopener noreferrer" className="absolute left-[9.6%] top-[87%] flex items-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-10 py-4 text-[15px] font-extrabold uppercase tracking-wide text-white shadow-[0_12px_35px_rgba(63,146,84,.45)] transition-all duration-300 hover:-translate-y-1 hover:scale-105">
+          <a href="#comprar" className="absolute left-[9.6%] top-[87%] flex items-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-10 py-4 text-[15px] font-extrabold uppercase tracking-wide text-white shadow-[0_12px_35px_rgba(63,146,84,.45)] transition-all duration-300 hover:-translate-y-1 hover:scale-105">
             <WhatsAppIcon />Comprar pelo WhatsApp
           </a>
         </div>
@@ -92,7 +92,7 @@ export default function Home() {
               <img src="/imagens/00.jpeg" alt="Capa do livro" className="h-[330px] w-full rounded-[22px] object-cover" />
             </div>
             <p className="mt-6 text-[15px] leading-7 text-[#26362f]">Um texto surpreendente e humano sobre a rotina de quem vive nessa condição.</p>
-            <a href="#comprar" target="_blank" rel="noopener noreferrer" className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-6 py-4 text-[14px] font-black uppercase tracking-wide text-white shadow-[0_12px_35px_rgba(63,146,84,.45)]">
+            <a href="#comprar" className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-6 py-4 text-[14px] font-black uppercase tracking-wide text-white shadow-[0_12px_35px_rgba(63,146,84,.45)]">
               <WhatsAppIcon />Comprar pelo WhatsApp
             </a>
           </div>
@@ -116,12 +116,98 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="galeria" className="grid scroll-mt-28 grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {["1.jpeg","2.jpeg","3.jpeg","4.jpeg"].map((img) => (
-              <div key={img} className="group h-[220px] overflow-hidden rounded-2xl bg-white p-2 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-[285px]">
-                <img src={`/imagens/${img}`} alt="Imagem da galeria do livro" className="h-full w-full rounded-xl object-cover transition duration-700 group-hover:scale-110" />
+          <div id="galeria" className="min-w-0 scroll-mt-28">
+            <div className="mb-6 text-center md:text-left">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-[#3f9254]">
+                Bastidores da obra
+              </p>
+
+              <h3 className="mt-2 text-2xl font-black md:text-3xl">
+                Da escrita à publicação
+              </h3>
+
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#26362f]/80">
+                Arraste para o lado e conheça os registros do processo de criação,
+                revisão e construção do livro.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 hidden w-12 bg-gradient-to-r from-[#fbf5eb] to-transparent md:block" />
+              <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 hidden w-12 bg-gradient-to-l from-[#fbf5eb] to-transparent md:block" />
+
+              <div
+                className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-5 [scrollbar-color:#3f9254_transparent] [scrollbar-width:thin]"
+                aria-label="Galeria de fotos do livro"
+              >
+                {[
+                  {
+                    src: "/imagens/1.jpeg",
+                    alt: "Detalhe da capa do livro",
+                    legenda: "Detalhes da capa",
+                  },
+                  {
+                    src: "/imagens/2.jpeg",
+                    alt: "Livro sendo manuseado",
+                    legenda: "Acabamento do livro",
+                  },
+                  {
+                    src: "/imagens/3.jpeg",
+                    alt: "Lombada do livro",
+                    legenda: "Detalhes da lombada",
+                  },
+                  {
+                    src: "/imagens/4.jpeg",
+                    alt: "Livro sobre a mesa",
+                    legenda: "Livro finalizado",
+                  },
+                  {
+                    src: "/imagens/foto 5.png",
+                    alt: "Páginas revisadas e organizadas",
+                    legenda: "Processo de revisão",
+                  },
+                  {
+                    src: "/imagens/foto 4.png",
+                    alt: "Livro aberto durante a revisão",
+                    legenda: "Leitura e ajustes",
+                  },
+                  {
+                    src: "/imagens/foto 3.png",
+                    alt: "Caça-palavras utilizado no projeto gráfico",
+                    legenda: "Construção da capa",
+                  },
+                  {
+                    src: "/imagens/foto 2.png",
+                    alt: "Estudo manuscrito da expressão no cotidiano",
+                    legenda: "Bastidores da escrita",
+                  },
+                ].map((foto) => (
+                  <figure
+                    key={foto.src}
+                    className="group relative w-[78vw] max-w-[310px] shrink-0 snap-center overflow-hidden rounded-[24px] border border-[#102b22]/10 bg-white p-2 shadow-[0_18px_40px_rgba(16,43,34,0.14)] transition duration-500 hover:-translate-y-2 hover:shadow-2xl sm:w-[290px] md:w-[300px]"
+                  >
+                    <div className="h-[330px] overflow-hidden rounded-[18px] bg-[#eee7dc] sm:h-[360px] md:h-[390px]">
+                      <img
+                        src={foto.src}
+                        alt={foto.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105"
+                      />
+                    </div>
+
+                    <figcaption className="absolute inset-x-2 bottom-2 rounded-b-[18px] bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 pb-4 pt-16 text-left text-sm font-bold text-white">
+                      {foto.legenda}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
-            ))}
+
+              <div className="mt-1 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#3f9254]">
+                <span aria-hidden="true">←</span>
+                Deslize para ver mais
+                <span aria-hidden="true">→</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
