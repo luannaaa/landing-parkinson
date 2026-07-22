@@ -92,7 +92,7 @@ function WhatsAppIcon({ dark = false }: { dark?: boolean }) {
       className={`h-5 w-5 ${dark ? "fill-[#102b22]" : "fill-white"}`}
       aria-hidden="true"
     >
-      <path d="M16.04 3C8.86 3 3.03 8.82 3.03 15.98c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.75a12.9 12.9 0 0 0 6.34 1.62h.01c7.18 0 13.01-5.82 13.01-12.98C29.06 8.82 23.22 3 16.04 3Zm0 23.65h-.01a10.77 10.77 0 0 1-5.49-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.72 10.72 0 0 1-1.65-5.71c0-5.94 4.84-10.77 10.8-10.77 2.88 0 5.59 1.12 7.63 3.15a10.7 10.7 0 0 1 3.17 7.62c0 5.94-4.84 10.77-10.9 10.77Z" />
+      <path d="M16.04 3C8.86 3 3.03 8.82 3.03 15.98c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.75a12.9 12.9 0 0 0 6.34 1.62h.01c7.18 0 13.01-5.82 13.01-12.98C29.06 8.82 23.22 3 16.04 3Zm0 23.65h-.01a10.77 10.77 0 0 1-5.49-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.72 10.72 0 0 1-1.65-5.71c0-5.94 4.84-10.77 10.8-10.77 2.88 0 5.59 1.12 7.63 3.15a10.7 10.7 0 0 1 3.17 7.62c0 5.94-4.84 10.77-10.9 10.77Zm5.92-8.06c-.32-.16-1.91-.94-2.21-1.05-.3-.11-.52-.16-.74.16-.22.32-.85 1.05-1.04 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.56.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.56-.74-.57h-.63c-.21 0-.56.08-.85.4-.3.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.31c.16.21 2.26 3.45 5.48 4.84.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z" />
     </svg>
   );
 }
@@ -148,46 +148,57 @@ export default function Home() {
     <main id="topo" className="min-h-screen overflow-x-hidden bg-[#fbf6ee] text-[#102b22]">
       <Header />
 
+
       <section className="pt-[72px]">
-        <div className="relative hidden overflow-hidden md:block">
+        {/* HERO PARA COMPUTADOR */}
+        <div className="relative hidden overflow-hidden bg-[#f7efe4] md:block">
           <img
             src="/imagens/capa1.png"
             alt="13.892 Palavras para Entender o Parkinson no Cotidiano"
-            className="w-full"
+            className="block h-auto w-full"
+            draggable={false}
           />
+
           <a
             href="#comprar"
-            className="absolute bottom-[7%] left-[9%] flex items-center gap-3 rounded-full bg-[#3f9254] px-8 py-4 text-sm font-black uppercase text-white shadow-[0_16px_40px_rgba(63,146,84,.38)] transition hover:-translate-y-1"
+            className="absolute bottom-[4%] left-[25%] z-10 flex -translate-x-1/2 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-9 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_16px_40px_rgba(63,146,84,.42)] transition duration-300 hover:-translate-y-1 hover:scale-[1.03]"
           >
             <WhatsAppIcon />
             Comprar pelo WhatsApp
           </a>
         </div>
 
-        <div className="bg-gradient-to-b from-[#f8f0e5] to-[#fbf6ee] px-5 py-10 md:hidden">
-          <div className="mx-auto flex max-w-sm flex-col items-center text-center">
+        {/* HERO PARA CELULAR */}
+        <div className="relative overflow-hidden bg-gradient-to-b from-[#f8f0e5] to-[#fbf6ee] px-5 pb-12 pt-9 md:hidden">
+          <div className="mx-auto flex max-w-[380px] flex-col items-center text-center">
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[#3f9254]">
               Lançamento literário
             </p>
-            <h1 className="mt-3 text-4xl font-black leading-[1.05]">
+
+            <h1 className="mt-3 text-[38px] font-black leading-[1.02] text-[#102b22]">
               13.892 Palavras
             </h1>
-            <p className="mt-3 text-lg font-bold leading-6">
+
+            <p className="mt-3 max-w-[310px] text-[18px] font-bold leading-6 text-[#26362f]">
               para Entender o Parkinson no Cotidiano
             </p>
-            <div className="mt-7 w-[245px] rounded-[28px] bg-white p-2 shadow-2xl">
+
+            <div className="mt-7 w-[250px] overflow-hidden rounded-[30px] border border-[#102b22]/10 bg-white p-2 shadow-[0_24px_55px_rgba(16,43,34,.18)]">
               <img
                 src="/imagens/00.jpeg"
-                alt="Capa do livro"
-                className="h-[330px] w-full rounded-[22px] object-cover"
+                alt="Capa do livro 13.892 Palavras"
+                className="h-[340px] w-full rounded-[24px] object-cover object-center"
+                draggable={false}
               />
             </div>
-            <p className="mt-6 text-[15px] leading-7 text-[#26362f]">
+
+            <p className="mt-7 max-w-[340px] text-[15px] leading-7 text-[#26362f]">
               Um olhar humano, sensível e verdadeiro sobre a vida além do diagnóstico.
             </p>
+
             <a
               href="#comprar"
-              className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-[#3f9254] px-6 py-4 text-sm font-black uppercase text-white shadow-lg"
+              className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-6 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_14px_35px_rgba(63,146,84,.4)] transition active:scale-[0.98]"
             >
               <WhatsAppIcon />
               Ver opções de compra

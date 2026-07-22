@@ -52,7 +52,7 @@ export default function Header() {
           href="#comprar"
           className="hidden items-center gap-2 rounded-full bg-[#f6ebdd] px-6 py-3 text-xs font-black uppercase tracking-wide text-[#102b22] shadow-lg transition hover:-translate-y-0.5 hover:scale-[1.02] lg:flex"
         >
-          <WhatsAppIcon />
+          <WhatsAppIcon className="h-4 w-4 text-[#102b22]" />
           Ver opções de compra
         </a>
 
@@ -63,7 +63,7 @@ export default function Header() {
             className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f6ebdd] text-[#102b22] shadow-md sm:w-auto sm:gap-2 sm:px-4"
             aria-label="Ver opções de compra"
           >
-            <WhatsAppIcon className="h-5 w-5" />
+            <WhatsAppIcon className="h-5 w-5 text-[#102b22]" />
             <span className="hidden text-xs font-black uppercase sm:inline">
               Comprar
             </span>
@@ -76,16 +76,30 @@ export default function Header() {
             aria-label={aberto ? "Fechar menu" : "Abrir menu"}
             aria-expanded={aberto}
           >
-            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "translate-y-2 rotate-45" : ""}`} />
-            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "opacity-0" : ""}`} />
-            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "-translate-y-2 -rotate-45" : ""}`} />
+            <span
+              className={`h-0.5 w-5 bg-white transition ${
+                aberto ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-5 bg-white transition ${
+                aberto ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-5 bg-white transition ${
+                aberto ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
           </button>
         </div>
       </div>
 
       <div
         className={`overflow-hidden bg-[#0d2d23] transition-all duration-300 lg:hidden ${
-          aberto ? "max-h-[520px] border-t border-white/10 opacity-100" : "max-h-0 opacity-0"
+          aberto
+            ? "max-h-[520px] border-t border-white/10 opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex flex-col px-4 pb-5 pt-2 sm:px-6">
