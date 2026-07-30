@@ -6,9 +6,6 @@ import Header from "./components/Header";
 
 const numeroWhatsApp = "5531999367386";
 const editoraLink = "https://www.arteimpressaeditora.com.br/";
-const chavePix = "31999367386";
-const pixCopiaECola =
-  "00020126360014br.gov.bcb.pix0114+55319993673865204000053039865802BR5925CARLOS HENRIQUE BITAR BAR6014BELO HORIZONTE62090505Livro6304C416";
 
 function criarLinkWhatsApp(mensagem: string) {
   return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
@@ -159,13 +156,15 @@ export default function Home() {
             draggable={false}
           />
 
-          <a
-            href="#comprar"
-            className="absolute bottom-[4%] left-[25%] z-10 flex -translate-x-1/2 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-9 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_16px_40px_rgba(63,146,84,.42)] transition duration-300 hover:-translate-y-1 hover:scale-[1.03]"
+          <button
+            type="button"
+            disabled
+            title="As vendas ainda não foram liberadas"
+            className="absolute bottom-[4%] left-[25%] z-10 flex -translate-x-1/2 cursor-not-allowed items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d]/75 to-[#2f8b46]/75 px-9 py-4 text-sm font-black uppercase tracking-wide text-white/90 shadow-[0_16px_40px_rgba(63,146,84,.30)]"
           >
             <WhatsAppIcon />
             Comprar pelo WhatsApp
-          </a>
+          </button>
         </div>
 
         {/* HERO PARA CELULAR */}
@@ -196,13 +195,15 @@ export default function Home() {
               Um olhar humano, sensível e verdadeiro sobre a vida além do diagnóstico.
             </p>
 
-            <a
-              href="#comprar"
-              className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d] to-[#2f8b46] px-6 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_14px_35px_rgba(63,146,84,.4)] transition active:scale-[0.98]"
+            <button
+              type="button"
+              disabled
+              title="As vendas ainda não foram liberadas"
+              className="mt-7 flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#46b95d]/75 to-[#2f8b46]/75 px-6 py-4 text-sm font-black uppercase tracking-wide text-white/90 shadow-[0_14px_35px_rgba(63,146,84,.28)]"
             >
               <WhatsAppIcon />
               Ver opções de compra
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -327,11 +328,18 @@ export default function Home() {
               Como deseja adquirir o livro?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/70">
-              Escolha a opção, informe a quantidade e faça o Pix do valor total.
+              As opções serão liberadas assim que as vendas do livro começarem.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
+          <div className="relative mt-12">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 z-30 w-[92%] -translate-x-1/2 -translate-y-1/2 -rotate-3 rounded-2xl border-4 border-[#87e39a] bg-[#0d2d23]/95 px-5 py-5 text-center shadow-[0_22px_70px_rgba(0,0,0,.45)] sm:w-auto sm:min-w-[620px] sm:px-10">
+              <p className="text-xl font-black uppercase leading-tight text-[#ff5b5b] sm:text-3xl">
+                Aguardem, a venda ainda não está liberada.
+              </p>
+            </div>
+
+            <div className="grid gap-7 opacity-55 md:grid-cols-3">
             {opcoes.map((opcao, index) => (
               <article
                 key={opcao.titulo}
@@ -361,68 +369,25 @@ export default function Home() {
                     </p>
                     <p className="mt-1 text-xs text-white/60">{opcao.detalhe}</p>
 
-                    <a
-                      href={criarLinkWhatsApp(opcao.mensagem)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-6 flex items-center justify-center gap-3 rounded-full bg-[#3f9254] px-5 py-4 text-sm font-black uppercase text-white shadow-lg transition hover:scale-[1.02]"
+                    <button
+                      type="button"
+                      disabled
+                      className="mt-6 flex cursor-not-allowed items-center justify-center gap-3 rounded-full bg-[#3f9254]/70 px-5 py-4 text-sm font-black uppercase text-white/85 shadow-lg"
                     >
                       <WhatsAppIcon />
                       Escolher esta opção
-                    </a>
+                    </button>
                   </div>
                 </div>
               </article>
             ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-[#edf3ea] px-5 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-[1000px]">
-          <SectionTitle eyebrow="Pagamento por Pix" title="Dados para pagamento" center />
-          <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-[#26362f]">
-            Faça o Pix do valor total e envie o comprovante para o WhatsApp
-            (31) 99936-7386.
-          </p>
-
-          <div className="mt-10 grid gap-7 md:grid-cols-[1.15fr_.85fr]">
-            <article className="rounded-[28px] border border-[#102b22]/10 bg-white p-7 shadow-[0_22px_50px_rgba(16,43,34,.1)]">
-              <p className="text-xs font-black uppercase tracking-[0.25em] text-[#3f9254]">
-                Chave Pix
-              </p>
-              <p className="mt-3 text-3xl font-black">{chavePix}</p>
-              <p className="mt-1 text-sm text-[#26362f]">Tipo: celular</p>
-
-              <p className="mt-7 text-sm font-black">Pix copia e cola</p>
-              <div className="mt-2 break-all rounded-2xl bg-[#f7f0e6] p-4 text-xs leading-6 text-[#26362f]">
-                {pixCopiaECola}
-              </div>
-
-              <a
-                href={whatsappContato}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 flex items-center justify-center gap-3 rounded-full bg-[#3f9254] px-5 py-4 text-sm font-black uppercase text-white shadow-lg"
-              >
-                <WhatsAppIcon />
-                Enviar comprovante
-              </a>
-            </article>
-
-            <article className="flex flex-col items-center justify-center rounded-[28px] border border-[#102b22]/10 bg-white p-7 text-center shadow-[0_22px_50px_rgba(16,43,34,.1)]">
-              <p className="text-sm font-black">QR Code para pagamento</p>
-              <SmartImage
-                src="/imagens/QRpagamento (1).png"
-                alt="QR Code para pagamento via Pix"
-                className="mt-5 aspect-square w-full max-w-[260px] rounded-[22px] border border-[#102b22]/10 object-contain p-3"
-              />
-              <p className="mt-4 text-xs leading-5 text-[#26362f]">
-                Escaneie com o aplicativo do seu banco.
-              </p>
-            </article>
-          </div>
-
           <article className="mx-auto mt-7 max-w-[650px] rounded-[28px] border border-[#102b22]/10 bg-white p-8 text-center shadow-[0_22px_50px_rgba(16,43,34,.10)]">
             <p className="text-xs font-black uppercase tracking-[0.30em] text-[#3f9254]">
               Siga no Instagram

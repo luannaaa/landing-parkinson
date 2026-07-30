@@ -31,43 +31,40 @@ export default function Header() {
         <a
           href="#topo"
           onClick={() => setAberto(false)}
-          className="text-[13px] font-black uppercase tracking-[0.2em] sm:text-sm"
+          className="text-[12px] font-black uppercase tracking-[0.17em] sm:text-sm sm:tracking-[0.2em]"
         >
           13.892 Palavras
         </a>
 
         <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex">
           {links.map(([nome, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="transition hover:text-[#9ae6aa]"
-            >
+            <a key={href} href={href} className="transition hover:text-[#9ae6aa]">
               {nome}
             </a>
           ))}
         </nav>
 
-        <a
-          href="#comprar"
-          className="hidden items-center gap-2 rounded-full bg-[#f6ebdd] px-6 py-3 text-xs font-black uppercase tracking-wide text-[#102b22] shadow-lg transition hover:-translate-y-0.5 hover:scale-[1.02] lg:flex"
+        <button
+          type="button"
+          disabled
+          title="As vendas ainda não foram liberadas"
+          className="hidden cursor-not-allowed items-center gap-2 rounded-full bg-[#f6ebdd]/75 px-6 py-3 text-xs font-black uppercase tracking-wide text-[#102b22]/70 shadow-lg lg:flex"
         >
-          <WhatsAppIcon className="h-4 w-4 text-[#102b22]" />
+          <WhatsAppIcon className="h-4 w-4 text-[#102b22]/70" />
           Ver opções de compra
-        </a>
+        </button>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href="#comprar"
-            onClick={() => setAberto(false)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f6ebdd] text-[#102b22] shadow-md sm:w-auto sm:gap-2 sm:px-4"
-            aria-label="Ver opções de compra"
+          <button
+            type="button"
+            disabled
+            title="As vendas ainda não foram liberadas"
+            className="flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-full bg-[#f6ebdd]/75 text-[#102b22]/70 shadow-md sm:w-auto sm:gap-2 sm:px-4"
+            aria-label="Opções de compra ainda não liberadas"
           >
-            <WhatsAppIcon className="h-5 w-5 text-[#102b22]" />
-            <span className="hidden text-xs font-black uppercase sm:inline">
-              Comprar
-            </span>
-          </a>
+            <WhatsAppIcon className="h-5 w-5 text-[#102b22]/70" />
+            <span className="hidden text-xs font-black uppercase sm:inline">Comprar</span>
+          </button>
 
           <button
             type="button"
@@ -76,30 +73,16 @@ export default function Header() {
             aria-label={aberto ? "Fechar menu" : "Abrir menu"}
             aria-expanded={aberto}
           >
-            <span
-              className={`h-0.5 w-5 bg-white transition ${
-                aberto ? "translate-y-2 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-5 bg-white transition ${
-                aberto ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-5 bg-white transition ${
-                aberto ? "-translate-y-2 -rotate-45" : ""
-              }`}
-            />
+            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-5 bg-white transition ${aberto ? "-translate-y-2 -rotate-45" : ""}`} />
           </button>
         </div>
       </div>
 
       <div
         className={`overflow-hidden bg-[#0d2d23] transition-all duration-300 lg:hidden ${
-          aberto
-            ? "max-h-[520px] border-t border-white/10 opacity-100"
-            : "max-h-0 opacity-0"
+          aberto ? "max-h-[520px] border-t border-white/10 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex flex-col px-4 pb-5 pt-2 sm:px-6">
@@ -108,7 +91,7 @@ export default function Header() {
               key={href}
               href={href}
               onClick={() => setAberto(false)}
-              className="border-b border-white/10 px-2 py-4 text-sm font-bold"
+              className="border-b border-white/10 px-2 py-4 text-sm font-bold transition hover:bg-white/5"
             >
               {nome}
             </a>
